@@ -1,0 +1,13 @@
+NOTE: The pre requisite for installing Kubernetes is Container Runtime Environment.
+#Using Ansible we will install Docker Engine on all 3 nodes of the cluster
+mkdir ANSIBLE_DOCKER
+mkdir ~/ANSIBLE_DOCKER/INVENTORY
+touch ~/ANSIBLE_DOCKER/INVENTORY/hosts.yml
+#Add the ip addressess of al nodes in the hosts.yml file
+#Run the docker.yml playbook with the following command:
+# create docker.yml playbook 
+# Run Playbook
+ansible-playbook -i INVENTORY docker.yml -u ubuntu -K
+# Verify docker version installed
+$sudo docker --version
+$sudo docker-compose --version
