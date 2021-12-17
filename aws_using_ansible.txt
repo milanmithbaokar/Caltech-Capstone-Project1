@@ -1,0 +1,17 @@
+#Now that we have Ansible installed on Master node. We wil use Ansible to spin up remaining two nodes in AWS cloud
+$cd /etc/ansible
+$mkdir AWS_CLOUD
+$cd AWS_CLOUD
+#Install Python3
+$sudo apt install pyton3-pip
+#In order for the EC2 module to run from the Ansible playbook you have to install Boto3.It is the Amazon Web Services(AWS) SDK for Python. It enables python developers to create,configure,and manage AWS services such as EC2 and S3.
+$sudo pip install boto boto3
+$sudo pip install awscli
+$aws configure
+#Enter AWS credentials
+$cd AWS_CLOUD
+$touch launch_ec2.yml
+#NOTE aws_secret key not sore in this file for security reasons. This file modified with the keys before running the YAML script.
+$sudo ansible-playbook -v launch_ec2.yml
+
+

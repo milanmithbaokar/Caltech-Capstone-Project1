@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Provision instance
+      ec2:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        key_name: my_ssh_key_name
+        instance_type: t2.micro
+        image: ami-0d1cd67c26f5fca19
+        wait: yes
+        count: 1
+        region: us-west-2
