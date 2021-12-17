@@ -1,0 +1,16 @@
+using kubeadm we will setup a 3 node Kubernetes cluster
+$sudo kubeadm init
+$mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+sudo kubectl get nodes
+
+--
+On each worker node copy the join command with sudo 
+
+Note : To get the join command again on mater  → 
+ sudo kubeadm token create --print-join-command
+
+ kubectl get pod
+ kubectl get pod -n kube-system
+

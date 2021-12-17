@@ -1,0 +1,15 @@
+#We will install kubeadm toolbox and using kubeadm we will setup oir Kubernetes cluster
+#https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+#kubeadm : the command to bootstrap the cluster.
+#kubelet : the component that runs on all of the machines in your cluster and does things like starting pods and containers.
+#kubectl : the command line util to talk to your cluster
+$sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+$sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+$sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+chmod +x kubectl
+mkdir -p ~/.local/bin/kubectl
+mv ./kubectl ~/.local/bin/kubectl
+# and then add ~/.local/bin/kubectl to $PATH
+#test to ensure the version you installed is up-to-date:
+$sudo kubectl version --client
+
