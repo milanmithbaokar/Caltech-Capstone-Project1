@@ -22,3 +22,10 @@ We will setup a 3 node Kubernetes cluster in AWS cloud. We will simulate the e-c
 * Implement network policies at the database pod to allow ingress traffic from the front-end application pod
 * Demonstrate backing up kubernetes etcd database (Periodically backing up etcd cluster data is important to recover kubernetes clusters under disaster scenarios, such as losing all control plane nodes)
 * Demonstrate creating a new user with permissions to create, list, get,update, and delete pods.
+## Required Steps to setup Infrastructure
+* gitclone the repository using git clone https://github.com/milanmithbaokar/Caltech-Capstone-Project1
+* The first EC2 instance is going to be a manual install and the remaining two EC2 instances will be automated using Ansible
+* Refer aws_using_ansible.txt file to install two EC2 instances in AWS cloud(AWS_CLOUD directory contains the launch_ec2.yml script).
+* Modify the launch_ec2.yml script to enter your AWS account information, secret keys etc.
+* Refer docker_using_ansible.txt file to install docker on all 3 nodes(ANSIBLE_DOCKER/INVENTORY directory contains the docker.yml and hosts.yml that you need to modisy as per your environment)
+* Refer KUBERNETES Folder and follow kubeadm_install.txt,kubernetes_cluster.txt and weavenet_install.txt files in sequence to setup kubernetes cluster.
