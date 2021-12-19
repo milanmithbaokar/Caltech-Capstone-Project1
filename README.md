@@ -37,19 +37,19 @@ Follow link https://start.spring.io/ and input Artifact name,Name, Description t
 * Repeat above steps to create database zip jar file 
 * Modify the files using Ecplise IDE to append your own code or use the existing code as it is.
 * Upload the front-end and database jar files onto kubernetes cluster.
-## POD Creation
+## Pod Creation
 * Using the YAML scripts enter the front-end and database docker images
 * deploy the PODS
-## Deploy Apache J-meter POD
-* Deploy J-meter POD
+## Deploy Apache J-meter Pod
+* Deploy J-meter Pod
 * Follow the repository instructions and documentation links to deploy J-meter
-## Setting up network policies on POD
+## Setting up network policies on Pod
 * Follow the kubernetes documentation to setup network policies
 ## Horizontal Auto Scaling Policy
 * Follow the kubernetes documentation to enable Horizontal Auto Scaling Policy
-## Testing the load on front-end and database-pod
+## Testing the load on front-end and database pod
 * Using J-meter increase the worker threads 
 ## Results Verification
-* Verify that kubernetes automatically moves the POD to another node as per set policy
+* Verify that kubernetes automatically moves the Pod to another node as per set policy
 
 
