@@ -50,6 +50,6 @@ Follow link https://start.spring.io/ and input Artifact name,Name, Description t
 ## Testing the load on front-end and database-pod
 * Using J-meter increase the worker threads 
 ## Results Verification
-* verify that kubernetes automatically moves the POD to another node as per policy set
+* Verify that kubernetes automatically moves the POD to another node as per set policy
 
 
