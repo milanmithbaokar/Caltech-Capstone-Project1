@@ -6,3 +6,19 @@ Caltech | CTME Capstone Project for Post Graduate Program in DevOps.(https://ctm
 We will setup a 3 node Kubernetes cluster in AWS cloud. We will simulate the e-commerce application by creating two Pods. One Pod will be used as an front-end application and other pod will serve as a database pod.The timeout scenario between the pods will be created by running worker threads that will consume CPU on the node using Apache Jmeter. We will set policies on the POD to move them as soon as the CPU threshold is reached. Below is the Architecture from official Kubernetes slide that we will be implementing.
 ![image](https://user-images.githubusercontent.com/83549198/146666347-af776ba6-5302-4940-a6d3-1765994b5c16.png)
                                   Reference : https://kubernetes.io/docs/concepts/overview/components/
+## Tools we will be using to setup this Infrastructure
+* Amazon EC2 Instances.
+* Ansible to automate the provisioning of EC2 instances.
+* Docker Engine to run our images and a requirement for setting up Kubernetes cluster.
+* Kubernetes as a Container Orchestration tool.
+## Tasks that we will be Performing
+* Automate the installation of AWS EC2 instances using Ansible.
+* Install Docker and Kubernetes on the AWS EC2 instances using Ansible.
+* Configure 3 node Kubernetes Cluster.
+* Using Springboot framework we will create simulated test applications(front-end and database).
+* Deploy the two PODS(front-end and database) on Kubernetes cluster.
+* Deploy Apache Jmeter POD on the kubernetes cluster for load generation testing.
+* Set criteria on front-end and database pod such that if memory or CPU goes beyond 50%, environment will move the POD automatically(Demonstrate Automatic Horizontal Pod Autoscaling feature in kubernetes)
+* Implement network policies at the database pod to allow ingress traffic from the front-end application pod
+* Demonstrate backing up kubernetes etcd database (Periodically backing up etcd cluster data is important to recover kubernetes clusters under disaster scenarios, such as losing all control plane nodes)
+* Demonstrate creating a new user with permissions to create, list, get,update, and delete pods.
